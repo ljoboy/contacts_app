@@ -3,7 +3,7 @@ require_once 'dbConnect.php';
 
 function is_contact($contact)
 {
-    $keys = array('idConatact', 'nom', 'postnom', 'prenom', 'numero', 'email', 'description', 'etat', 'genre', 'cree_le');
+    $keys = array('nom', 'postnom', 'prenom', 'numero', 'email', 'etat', 'genre', 'cree_le');
     $count = 0;
     foreach ($keys as $key) {
         if (array_key_exists($key, $contact)) {
@@ -58,7 +58,7 @@ function getContact($id)
     $contact = null;
     try{
         $db = dbConnect();
-        $r = $db->prepare("SELECT * FROM contacts WHERE id = :id AND etat = 1");
+        $r = $db->prepare("SELECT * FROM contacts WHERE idContact = :id AND etat = 1");
         $r->execute(array("id"=>$id));
         while ($c = $r->fetch(PDO::FETCH_ASSOC)){
             $contact = $c;
@@ -67,4 +67,18 @@ function getContact($id)
         $contact = false;
     }
     return $contact;
+}
+
+function deleteContact($id)
+{
+    $verif = null;
+    try{
+        $db = dbConnect();
+        $r = $db->prepare("UPDATE contacts SET etat = 0 WHERE idContact = :id");
+        $r->execute(array("id"=>$id));
+        $verif = true;
+    }catch (PDOException $e){
+        $verif = false;
+    }
+    return $verif;
 }
