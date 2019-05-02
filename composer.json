@@ -1,0 +1,13 @@
+{
+    "name": "itot/contacts",
+    "description": "Gestionnaire des contacts",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan Yombo",
+            "email": "jonathanyombo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
