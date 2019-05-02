@@ -13,8 +13,8 @@
     }
 
     function addContact($contact){
+        $verif = false;
         if (is_contact($contact)){
-            $verif = true;
             try{
                 $db = dbConnect();
                 $db->prepare("INSERT INTO contacts(idContact, nom, postnom, prenom, numero, email, description, cree_le, etat, genre)
@@ -29,10 +29,10 @@
                     "etat" => $contact['etat'],
                     "genre" => $contact['genre']
                 ]);
+                $verif = true;
             }catch (PDOException $e){
                 $verif = false;
-            }finally{
-                return $verif;
             }
         }
+        return $verif;
     }
