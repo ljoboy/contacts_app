@@ -20,7 +20,7 @@ function is_contact($contact)
 function addContact($contact)
 {
     $verif = null;
-    if (is_contact($contact)) {
+//    if (is_contact($contact)) {
         try {
             $db = dbConnect();
             $r = $db->prepare("INSERT INTO contacts(nom, postnom, prenom, numero, email, description, cree_le, genre)
@@ -30,7 +30,7 @@ function addContact($contact)
         } catch (PDOException $e) {
             $verif = false;
         }
-    }
+//    }
     return $verif;
 }
 
@@ -44,9 +44,7 @@ function getContacts()
         $db = dbConnect();
         $r = $db->prepare("SELECT * FROM contacts WHERE etat = 1");
         $r->execute();
-        while ($c = $r->fetchAll(PDO::FETCH_ASSOC)) {
-            $contacts[] = $c;
-        }
+        $contacts = $r->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         return false;
     }
@@ -60,9 +58,7 @@ function getContact($id)
         $db = dbConnect();
         $r = $db->prepare("SELECT * FROM contacts WHERE idContact = :id AND etat = 1");
         $r->execute(array("id" => $id));
-        while ($c = $r->fetch(PDO::FETCH_ASSOC)) {
-            $contact = $c;
-        }
+        $contact = $r->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         $contact = false;
     }

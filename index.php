@@ -4,13 +4,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['modifier'])) {
         include_once "_func/updateContact.php";
     } elseif (isset($_POST['ajouter'])) {
-        include_once "_func/addContact.php";
+        addContact($_POST);
     }
 } else {
     if (isset($_GET['supprimer'])) {
-        if (is_integer($_GET['supprimer'])) {
             $p = deleteContact($_GET['supprimer']);
-        }
     } else {
         include_once "_inc/main.php";
         exit;
