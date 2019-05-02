@@ -1,17 +1,17 @@
 <?php
 require_once "_func/functions.php";
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if (isset($_POST['modifier'])){
-        //TODO::Implemente this
-    }elseif (isset($_POST['ajouter'])){
-        //TODO::Implemente this
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['modifier'])) {
+        include_once "_func/updateContact.php";
+    } elseif (isset($_POST['ajouter'])) {
+        include_once "_func/addContact.php";
     }
-}else{
-    if (isset($_GET['supprimer'])){
-        if (is_integer($_GET['supprimer'])){
+} else {
+    if (isset($_GET['supprimer'])) {
+        if (is_integer($_GET['supprimer'])) {
             $p = deleteContact($_GET['supprimer']);
         }
-    }else{
+    } else {
         include_once "_inc/main.php";
         exit;
     }
