@@ -3,7 +3,7 @@ require_once 'dbConnect.php';
 
 function is_contact($contact)
 {
-    $keys = array('nom', 'postnom', 'prenom', 'numero', 'email', 'etat', 'genre', 'cree_le');
+    $keys = array('nom', 'postnom', 'prenom', 'numero', 'email', 'genre', 'cree_le');
     $count = 0;
     foreach ($keys as $key) {
         if (array_key_exists($key, $contact)) {
@@ -23,9 +23,9 @@ function addContact($contact)
     if (is_contact($contact)) {
         try {
             $db = dbConnect();
-            $r = $db->prepare("INSERT INTO contacts(idContact, nom, postnom, prenom, numero, email, description, cree_le, etat, genre)
-                                        VALUES(null, :nom, :postnom, :prenom, :numero, :email, :description, now(), :etat, :genre)");
-            $r->execute(array("nom" => $contact['nom'], "postnom" => $contact['postnom'], "prenom" => $contact['prenom'], "numero" => $contact['numero'], "email" => $contact['email'], "description" => $contact['description'], "etat" => $contact['etat'], "genre" => $contact['genre']));
+            $r = $db->prepare("INSERT INTO contacts(nom, postnom, prenom, numero, email, description, cree_le, genre)
+                                        VALUES(:nom, :postnom, :prenom, :numero, :email, :description, now(), :genre)");
+            $r->execute(array("nom" => $contact['nom'], "postnom" => $contact['postnom'], "prenom" => $contact['prenom'], "numero" => $contact['numero'], "email" => $contact['email'], "description" => $contact['description'], "genre" => $contact['genre']));
             $verif = true;
         } catch (PDOException $e) {
             $verif = false;
@@ -56,14 +56,14 @@ function getContacts()
 function getContact($id)
 {
     $contact = null;
-    try{
+    try {
         $db = dbConnect();
         $r = $db->prepare("SELECT * FROM contacts WHERE idContact = :id AND etat = 1");
-        $r->execute(array("id"=>$id));
-        while ($c = $r->fetch(PDO::FETCH_ASSOC)){
+        $r->execute(array("id" => $id));
+        while ($c = $r->fetch(PDO::FETCH_ASSOC)) {
             $contact = $c;
         }
-    }catch (PDOException $e){
+    } catch (PDOException $e) {
         $contact = false;
     }
     return $contact;
@@ -72,12 +72,28 @@ function getContact($id)
 function deleteContact($id)
 {
     $verif = null;
-    try{
+    try {
         $db = dbConnect();
         $r = $db->prepare("UPDATE contacts SET etat = 0 WHERE idContact = :id");
-        $r->execute(array("id"=>$id));
+        $r->execute(array("id" => $id));
         $verif = true;
-    }catch (PDOException $e){
+    } catch (PDOException $e) {
+        $verif = false;
+    }
+    return $verif;
+}
+
+function updateContact($id, $contact)
+{
+    $verif = null;
+    try {
+        $db = dbConnect();
+        $r = $db->prepare("UPDATE contacts 
+                                        SET nom = :nom, postnom = :postnom, prenom = :prenom, numero = :numero, email = :email, genre = :genre
+                                        WHERE idContact = :id");
+        $r->execute(array("id" => $id, "nom" => $contact['nom'], "postnom" => $contact['postnom'], "prenom" => $contact['prenom'], "numero" => $contact['numero'], "email" => $contact['email'], "genre" => $contact['genre'],));
+        $verif = true;
+    } catch (PDOException $e) {
         $verif = false;
     }
     return $verif;
