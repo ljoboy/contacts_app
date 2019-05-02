@@ -1,5 +1,5 @@
 {
-    "name": "itot/contacts",
+    "name": "dark-angel/contacts",
     "description": "Gestionnaire des contacts",
     "license": "MIT",
     "authors": [
@@ -9,5 +9,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }

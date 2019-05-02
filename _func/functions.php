@@ -19,7 +19,7 @@ function is_contact($contact)
  */
 function addContact($contact)
 {
-    $verif = false;
+    $verif = null;
     if (is_contact($contact)) {
         try {
             $db = dbConnect();
@@ -51,4 +51,20 @@ function getContacts()
         return false;
     }
     return $contacts;
+}
+
+function getContact($id)
+{
+    $contact = null;
+    try{
+        $db = dbConnect();
+        $r = $db->prepare("SELECT * FROM contacts WHERE id = :id AND etat = 1");
+        $r->execute(array("id"=>$id));
+        while ($c = $r->fetch(PDO::FETCH_ASSOC)){
+            $contact = $c;
+        }
+    }catch (PDOException $e){
+        $contact = false;
+    }
+    return $contact;
 }

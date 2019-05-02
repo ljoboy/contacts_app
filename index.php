@@ -15,8 +15,6 @@
     <link href="assets/css/mdb.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <style rel="stylesheet">
-        /* TEMPLATE STYLES */
-
         main {
             padding-top: 3rem;
             padding-bottom: 2rem;
@@ -64,10 +62,6 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                 </ul>
-                <!--Search form-->
-                <form class="form-inline">
-                    <input class="form-control" type="text" placeholder="Search">
-                </form>
             </div>
             <!--/.Collapse content-->
 
@@ -79,208 +73,65 @@
 </header>
 
 <main>
-
-    <!--Main layout-->
     <div class="container">
-        <!--First row-->
-        <div class="row">
-            <div class="col-md-7">
-                <!--Featured image -->
-                <div class="view overlay hm-white-light z-depth-1-half">
-                    <img src="../../../../../images/proffesions/slides/socialmedia/img%20(2).jpg" class="img-fluid " alt="">
-                    <div class="mask">
-                    </div>
-                </div>
-                <br>
-            </div>
+        <div class="container-fluid">
+            <table class="table table-hover">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Abby</td>
+                    <td>Barrett</td>
+                    <td>@abbeme</td>
+                    <td>
+                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                        <a class="red-text"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Danny</td>
+                    <td>Collins</td>
+                    <td>@dennis</td>
+                    <td>
+                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                        <a class="red-text"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Clara</td>
+                    <td>Ericson</td>
+                    <td>@claris</td>
+                    <td>
+                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                        <a class="red-text"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
 
-            <!--Main information-->
-            <div class="col-md-5">
-                <h2 class="h2-responsive">We are professionals</h2>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis pariatur quod ipsum atque quam dolorem voluptate officia sunt placeat consectetur alias fugit cum praesentium ratione sint mollitia, perferendis natus quaerat!</p>
-                <a href="#" class="btn btn-primary">Get it now!</a>
-            </div>
+                </tbody>
+            </table>
         </div>
-        <!--/.First row-->
-
-        <hr class="extra-margins">
-
-        <!--Second row-->
-        <div class="row">
-            <!--First columnn-->
-            <div class="col-md-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="../../../../../images/regular/city/img%20(2).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Card title</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--First columnn-->
-
-            <!--Second columnn-->
-            <div class="col-md-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="../../../../../images/regular/city/img%20(4).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Card title</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--Second columnn-->
-
-            <!--Third columnn-->
-            <div class="col-md-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="../../../../../images/regular/city/img%20(8).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Card title</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--Third columnn-->
-        </div>
-        <!--/.Second row-->
     </div>
-    <!--/.Main layout-->
-
 </main>
 
 <!--Footer-->
 <footer class="page-footer center-on-small-only primary-color-dark">
-
-    <!--Footer Links-->
-    <div class="container-fluid">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-3 offset-md-1">
-                <h5 class="title">ABOUT MATERIAL DESIGN</h5>
-                <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
-
-                <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
-            </div>
-            <!--/.First column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Second column-->
-            <div class="col-md-2 offset-md-1">
-                <h5 class="title">First column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Second column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Third column-->
-            <div class="col-md-2">
-                <h5 class="title">Second column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Third column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Fourth column-->
-            <div class="col-md-2">
-                <h5 class="title">Third column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Fourth column-->
-
-        </div>
-    </div>
-    <!--/.Footer Links-->
-
-    <hr>
-
-    <!--Call to action-->
-    <div class="call-to-action">
-        <h4>Material Design for Bootstrap</h4>
-        <ul>
-            <li>
-                <h5>Get our UI KIT for free</h5></li>
-            <li><a target="_blank" href="../../../../../getting-started/index.html" class="btn btn-danger">Sign up!</a></li>
-            <li><a target="_blank" href="../../../../../material-design-for-bootstrap/index.html" class="btn btn-default">Learn more</a></li>
-        </ul>
-    </div>
-    <!--/.Call to action-->
-
-    <!--Copyright-->
+        <!--Copyright-->
     <div class="footer-copyright">
         <div class="container-fluid">
-            © 2015 Copyright: <a href="../../../../../index.html"> MDBootstrap.com </a>
+            © <?php echo date('Y') ?> Copyright : <a href="http://about.me/ljoboy" target="_blank"> Glody </a>
 
         </div>
     </div>
